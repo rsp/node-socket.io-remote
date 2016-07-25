@@ -2,7 +2,6 @@
   "name": "socket.io-remote",
   "version": "0.0.0",
   "description": "Remote control with Socket.IO - example for Stack Overflow",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +9,11 @@
     "type": "git",
     "url": "git+https://github.com/rsp/node-socket.io-remote.git"
   },
-  "author": "Rafał Pocztarski <r.pocztarski@gmail.com> (https://rsp.github.io/)",
+  "author": {
+    "name": "Rafał Pocztarski",
+    "email": "r.pocztarski@gmail.com",
+    "url": "https://rsp.github.io/"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/rsp/node-socket.io-remote/issues"
