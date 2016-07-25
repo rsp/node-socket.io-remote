@@ -27,7 +27,9 @@ node app.js
 ```
 ### Open webpage
 Open yhe webpage in few windows or tabs:
-* http://localhost:3002/
+
+* [http://localhost:3002/](http://localhost:3002/)
+
 And click a link in one of them.
 
 Issues
