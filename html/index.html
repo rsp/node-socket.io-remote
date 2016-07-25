@@ -28,15 +28,19 @@ and click links below:
 </p>
 <ol id=l></ol>
 <script src="/socket.io/socket.io.js"></script>
+<script src="/jquery-3.1.0.js"></script>
 <script>
 
-var l = document.getElementById('l');
+var $l = $('#l');
 var log = function (m) {
     var i = document.createElement('li');
-    i.innerText = new Date().toISOString()+' '+m;
-    l.appendChild(i);
+    var $i = $('<li>');
+    $i.text(new Date().toISOString()+' '+m);
+    $i.appendTo($l);
 }
+
 log('opening socket.io connection');
+
 var s = io();
 s.on('connect_error', function (m) { log("error"); });
 s.on('connect', function (m) { log("socket.io connection open"); });
