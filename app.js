@@ -16,6 +16,10 @@ app.use(express.static(path.join(__dirname, 'html')));
 
 io.on('connection', s => {
   console.error('socket.io connection');
+  s.on('click', d => {
+    console.error('click on id '+d.id);
+    s.broadcast.emit('click', d);
+  });
 });
 
 http.listen(3002, () => console.error('Listening on http://localhost:3002/'));
