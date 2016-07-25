@@ -16,8 +16,6 @@ app.use(express.static(path.join(__dirname, 'html')));
 
 io.on('connection', s => {
   console.error('socket.io connection');
-  for (var t = 0; t < 3; t++)
-    setTimeout(() => s.emit('message', 'message from server'), 1000*t);
 });
 
 http.listen(3002, () => console.error('Listening on http://localhost:3002/'));
