@@ -20,12 +20,18 @@ h1+p { margin: 0; }
 <h1>Socket.IO Remote Control</h1>
 <p>
 From node-socket.io-remote by Rafał Pocztarski
-<br><a href="https://github.com/rsp/node-socket.io-remote">https://github.com/rsp/node-socket.io-remote</a>
+<br><a class="remote" id="project" href="https://github.com/rsp/node-socket.io-remote">https://github.com/rsp/node-socket.io-remote</a>
 </p>
 <p>
-Open <a target="_blank" href=".">this page</a> in few windows
+Open <a target="_blank" id="this" href=".">this page</a> in few windows
 and click links below:
 </p>
+<p>
+<a class="remote" id="google" href="https://www.google.com/">Google</a>
+<a class="remote" id="yahoo" href="https://www.yahoo.com/">Yahoo</a>
+<a class="remote" id="twitter" href="https://www.twitter.com/">Twitter</a>
+</p>
+<hr>
 <p>Log:</p>
 <ol id=l></ol>
 <script src="/socket.io/socket.io.js"></script>
@@ -46,6 +52,15 @@ var s = io();
 s.on('connect_error', function (m) { log("error"); });
 s.on('connect', function (m) { log("socket.io connection open"); });
 s.on('message', function (m) { log(m); });
+s.on('click', function (d) {
+  log('received click message, id ' + d.id);
+  $('#'+d.id)[0].click();
+});
+
+$('.remote').click(function (e) {
+  log('emitting click message, id ' + e.target.id);
+  s.emit('click', {id: e.target.id});
+});
 
 </script>
 </body>
