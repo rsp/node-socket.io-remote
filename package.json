@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/rsp/node-socket.io-remote/issues"
   },
-  "homepage": "https://github.com/rsp/node-socket.io-remote#readme"
+  "homepage": "https://github.com/rsp/node-socket.io-remote#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
 }
