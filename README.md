@@ -26,7 +26,7 @@ npm i
 node app.js
 ```
 ### Open webpage
-Open yhe webpage in few windows or tabs:
+Open the webpage in few windows or tabs:
 
 * [http://localhost:3002/](http://localhost:3002/)
 
