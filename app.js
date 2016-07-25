@@ -7,7 +7,8 @@
 // https://github.com/rsp/node-socket.io-remote/blob/master/LICENSE.md
 
 var path = require('path');
-var app = require('express')();
+var express = require('express');
+var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
@@ -19,7 +20,8 @@ io.on('connection', s => {
     setTimeout(() => s.emit('message', 'message from server'), 1000*t);
 });
 
-http.listen(3002, () => console.error('listening on http://localhost:3002/'));
+http.listen(3002, () => console.error('Listening on http://localhost:3002/'));
 
-console.error('socket.io example');
+console.error(
+  'Socket.IO example from https://github.com/rsp/node-socket.io-remote\n');
 
