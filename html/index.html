@@ -48,18 +48,23 @@ var log = function (m) {
 
 log('opening socket.io connection');
 
+var ownClick = true;
 var s = io();
 s.on('connect_error', function (m) { log("error"); });
 s.on('connect', function (m) { log("socket.io connection open"); });
 s.on('message', function (m) { log(m); });
 s.on('click', function (d) {
   log('received click message, id ' + d.id);
+  ownClick = false;
   $('#'+d.id)[0].click();
+  ownClick = true;
 });
 
 $('.remote').click(function (e) {
-  log('emitting click message, id ' + e.target.id);
-  s.emit('click', {id: e.target.id});
+  if (ownClick) {
+    log('emitting click message, id ' + e.target.id);
+    s.emit('click', {id: e.target.id});
+  }
 });
 
 </script>
