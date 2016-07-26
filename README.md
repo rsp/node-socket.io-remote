@@ -3,6 +3,9 @@ Node Socket.IO Remote
 Example for Stack Overflow answer:
 * [Node.js Server - how to pass buttonclick function from client to client](https://stackoverflow.com/questions/38568023/node-js-server-how-to-pass-buttonclick-function-from-client-to-client/38568418#38568418)
 
+Also referenced in another Stack Overflow answer:
+* [onload js call not working with node](https://stackoverflow.com/questions/38587286/onload-js-call-not-working-with-node/38587729#38587729)
+
 How to use
 -----------
 ### Download
